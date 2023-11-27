@@ -4,12 +4,12 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
+import mongoose from "mongoose";
 
 import generalRoutes from "./routes/generalRoutes.js";
 import clientRoutes from "./routes/clientRoutes.js";
 import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
-import mongoose from "mongoose";
 
 // CONFIGURATION
 dotenv.config();
