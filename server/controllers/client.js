@@ -21,6 +21,7 @@ export const getProducts = async (req, res) => {
 
     res.status(200).json(productsWithStats);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -31,6 +32,7 @@ export const getCustomers = async (req, res) => {
 
     res.status(200).json(customers);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
@@ -66,6 +68,7 @@ export const getTransactions = async (req, res) => {
 
     res.status(200).json({ transactions, total });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
