@@ -16,6 +16,7 @@ import Dashboard from "./scenes/Dashboard";
 import Products from "./scenes/Products";
 import Customers from "./scenes/Customers";
 import Transactions from "./scenes/Transactions";
+import Geography from "./scenes/Geography";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="/products" element={<Products />} />
       <Route path="/customers" element={<Customers />} />
       <Route path="/transactions" element={<Transactions />} />
+      <Route path="/geography" element={<Geography />} />
     </Route>
   )
 );
