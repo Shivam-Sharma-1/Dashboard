@@ -13,12 +13,14 @@ import {
 import { themeSettings } from "./theme";
 import Layout from "./scenes/Layout";
 import Dashboard from "./scenes/Dashboard";
+import Products from "./scenes/Products";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/products" element={<Products />} />
     </Route>
   )
 );
