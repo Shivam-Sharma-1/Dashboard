@@ -4,10 +4,9 @@ import { geoData } from "@/state/geoData";
 import { Box, useTheme } from "@mui/material";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
-const Geography = () => {
+function Geography() {
   const theme = useTheme();
   const { data } = useGetGeographyQuery();
-  console.log(data);
 
   return (
     <Box m="1.5rem 2.5rem">
@@ -98,6 +97,6 @@ const Geography = () => {
       </Box>
     </Box>
   );
-};
+}
 
 export default Geography;
