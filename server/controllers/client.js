@@ -1,3 +1,5 @@
+import getCountryISO3 from "country-iso-2-to-3";
+
 import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
 import Transaction from "../models/Transaction.js";
@@ -67,6 +69,35 @@ export const getTransactions = async (req, res) => {
     });
 
     res.status(200).json({ transactions, total });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const getGeography = async (req, res) => {
+  try {
+    const users = await User.find();
+
+    const mappedLocations = users.reduce((acc, { country }) => {
+      const countryISO3 = getCountryISO3(country);
+      if (!acc[countryISO3]) {
+        acc[countryISO3] = 0;
+      }
+      acc[countryISO3] += 1;
+      return acc;
+    }, {});
+
+    const formattedLocations = Object.entries(mappedLocations).map(
+      ([country, count]) => {
+        return {
+          id: country,
+          value: count,
+        };
+      }
+    );
+
+    res.status(200).json(formattedLocations);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: error.message });
