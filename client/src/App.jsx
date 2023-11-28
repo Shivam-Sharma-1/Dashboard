@@ -31,7 +31,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <RouterProvider router={router} />
-      <h1>App</h1>
     </ThemeProvider>
   );
 }
