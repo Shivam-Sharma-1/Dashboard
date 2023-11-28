@@ -10,6 +10,9 @@ import generalRoutes from "./routes/generalRoutes.js";
 import clientRoutes from "./routes/clientRoutes.js";
 import managementRoutes from "./routes/managementRoutes.js";
 import salesRoutes from "./routes/salesRoutes.js";
+import Product from "./models/Product.js";
+import { dataProduct } from "./data/index.js";
+import ProductStat from "./models/ProductStat.js";
 
 // CONFIGURATION
 dotenv.config();
@@ -39,6 +42,8 @@ mongoose
     app.listen(PORT, () => {
       console.log(`Server running on port: ${PORT}`);
     });
+    // Product.insertMany(dataProduct)
+    // ProductStat.insertMany(dataProductStat)
   })
   .catch((error) => {
     console.log(error.message);
