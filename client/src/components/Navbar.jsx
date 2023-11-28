@@ -24,7 +24,7 @@ import {
 
 import { setMode } from "@/state";
 import FlexBetween from "./FlexBetween";
-import profileImage from "/avatar.svg";
+import profileImage from "@/assets/avatar.svg";
 
 function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
   const dispatch = useDispatch();
