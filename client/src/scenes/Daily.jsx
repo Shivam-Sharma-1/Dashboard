@@ -107,7 +107,7 @@ function Daily() {
               },
               tooltip: {
                 container: {
-                  color: theme.palette.primary.main,
+                  color: theme.palette.grey[700],
                 },
               },
             }}
