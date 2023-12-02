@@ -63,7 +63,7 @@ function BreakdownChart({ isDashboard = false }) {
           },
           tooltip: {
             container: {
-              color: theme.palette.primary.main,
+              color: theme.palette.grey[700],
             },
           },
         }}
