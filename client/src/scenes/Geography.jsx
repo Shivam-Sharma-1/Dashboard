@@ -1,12 +1,26 @@
 import Header from "@/components/Header";
 import { useGetGeographyQuery } from "@/state/api";
 import { geoData } from "@/state/geoData";
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, CircularProgress } from "@mui/material";
 import { ResponsiveChoropleth } from "@nivo/geo";
 
 function Geography() {
   const theme = useTheme();
-  const { data } = useGetGeographyQuery();
+  const { data, isLoading } = useGetGeographyQuery();
+
+  if (!data || isLoading)
+    return (
+      <Box
+        width="100%"
+        height="100%"
+        minHeight="80vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
 
   return (
     <Box height="100%" maxHeight="85vh" m="1.5rem 2.5rem">
