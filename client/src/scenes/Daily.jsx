@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Box, useTheme, CircularProgress } from "@mui/material";
+import { Box, useTheme, CircularProgress, InputLabel } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -66,9 +66,12 @@ function Daily() {
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="DAILY SALES" subtitle="Chart of daily sales" />
-      <Box height="75vh">
-        <Box display="flex" justifyContent="flex-end">
+      <Box height="72vh">
+        <Box display="flex" justifyContent="flex-end" gap="1em">
           <Box>
+            <InputLabel sx={{ color: theme.palette.secondary[100] }}>
+              Start Date:
+            </InputLabel>
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -78,6 +81,9 @@ function Daily() {
             />
           </Box>
           <Box>
+            <InputLabel sx={{ color: theme.palette.secondary[100] }}>
+              End Date:
+            </InputLabel>
             <DatePicker
               selected={endDate}
               onChange={(date) => setEndDate(date)}
