@@ -18,6 +18,8 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+
 import { DataGrid } from "@mui/x-data-grid";
 
 function Dashboard() {
@@ -55,6 +57,20 @@ function Dashboard() {
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },
   ];
+
+  if (!data || isLoading)
+    return (
+      <Box
+        width="100%"
+        height="100%"
+        minHeight="80vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
 
   return (
     <Box m="1.5rem 2.5rem">
