@@ -1,4 +1,4 @@
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, CircularProgress } from "@mui/material";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { useGetUserPerformanceQuery } from "@/state/api";
@@ -40,15 +40,29 @@ function Performance() {
     },
   ];
 
+  if (!data || isLoading)
+    return (
+      <Box
+        width="100%"
+        height="100%"
+        minHeight="80vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
+
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box height="100%" maxHeight="85vh" m="1.5rem 2.5rem">
       <Header
         title="PERFORMANCE"
         subtitle="Track your Affiliate Sales Performance Here"
       />
       <Box
         mt="40px"
-        height="75vh"
+        height="72vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
