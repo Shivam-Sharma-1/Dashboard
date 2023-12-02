@@ -41,10 +41,11 @@ function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
         position: "static",
         background: "none",
         boxShadow: "none",
+        px: ".5em",
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        <FlexBetween>
+        <FlexBetween sx={{ gap: "1em" }}>
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
@@ -61,7 +62,7 @@ function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
           </FlexBetween>
         </FlexBetween>
 
-        <FlexBetween gap="1.5rem">
+        <FlexBetween gap="1em">
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkModeOutlined sx={{ fontSize: "25px" }} />
