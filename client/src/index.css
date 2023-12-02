@@ -14,18 +14,23 @@
   padding: 0;
 }
 
+body {
+  scrollbar-gutter: stable;
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #7a7f9d;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #21295c;
+  background: #f1b9b7;
 }
 
-::-webkit-scrollbar-track:hover {
-  background: #373e6b;
+::-webkit-scrollbar-thumb:hover {
+  background: #e99592;
 }
