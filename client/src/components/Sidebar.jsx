@@ -127,26 +127,37 @@ function Sidebar({
             },
           }}
         >
-          <Box width="100%">
-            <Box m="1.5rem 2rem 2rem 3rem">
+          <Box width="100%" sx={{ overflowY: "scroll" }}>
+            <Box m="1.5rem 2rem 1.5rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
-                <Box display="flex" alignItems="center" gap="0.5rem">
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  gap="0.5rem"
+                  width="fit-content"
+                >
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    MyDashboard
                   </Typography>
+                  {!isNonMobile && (
+                    <IconButton
+                      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    >
+                      <ChevronLeft />
+                    </IconButton>
+                  )}
                 </Box>
-                {!isNonMobile && (
-                  <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                    <ChevronLeft />
-                  </IconButton>
-                )}
               </FlexBetween>
             </Box>
             <List>
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    <Typography
+                      key={text}
+                      sx={{ m: "2.25rem 0 1rem 2rem" }}
+                      color={theme.palette.secondary[300]}
+                    >
                       {text}
                     </Typography>
                   );
@@ -163,12 +174,18 @@ function Sidebar({
                       sx={{
                         backgroundColor:
                           active === lcText
-                            ? theme.palette.secondary[300]
+                            ? theme.palette.secondary[200]
                             : "transparent",
                         color:
                           active === lcText
-                            ? theme.palette.primary[600]
+                            ? theme.palette.secondary[900]
                             : theme.palette.secondary[100],
+                        "&:hover": {
+                          backgroundColor:
+                            active === lcText
+                              ? theme.palette.secondary[200]
+                              : "",
+                        },
                       }}
                     >
                       <ListItemIcon
@@ -193,9 +210,13 @@ function Sidebar({
             </List>
           </Box>
 
-          <Box position="absolute" bottom="2rem">
+          <Box>
             <Divider />
-            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+            <FlexBetween
+              textTransform="none"
+              gap="1rem"
+              m="1.5rem 2rem 1.5rem 3rem"
+            >
               <Box
                 component="img"
                 alt="profile"
