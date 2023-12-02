@@ -79,7 +79,7 @@ function OverviewChart({ isDashboard = false, view }) {
         },
         tooltip: {
           container: {
-            color: theme.palette.primary.main,
+            color: theme.palette.grey[700],
           },
         },
       }}
