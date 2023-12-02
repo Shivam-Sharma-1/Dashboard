@@ -1,13 +1,25 @@
 /* eslint-disable react/prop-types */
 import { ResponsivePie } from "@nivo/pie";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme, CircularProgress } from "@mui/material";
 import { useGetSalesQuery } from "@/state/api";
 
 function BreakdownChart({ isDashboard = false }) {
   const { data, isLoading } = useGetSalesQuery();
   const theme = useTheme();
 
-  if (!data || isLoading) return "Loading...";
+  if (!data || isLoading)
+    return (
+      <Box
+        width="100%"
+        height="100%"
+        minHeight="80vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <CircularProgress color="secondary" />
+      </Box>
+    );
 
   const colors = [
     theme.palette.secondary[500],
