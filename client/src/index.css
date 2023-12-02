@@ -34,3 +34,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #e99592;
 }
+
+.react-datepicker__input-container > input {
+  padding: 0.5em 1em !important;
+  background-color: #f8dcdb !important;
+  border: 1px solid #e99592 !important;
+  border-radius: 0.25rem !important;
+  outline: none !important;
+}
