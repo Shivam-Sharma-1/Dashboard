@@ -49,11 +49,11 @@ function Customers() {
   ];
 
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box height="100%" maxHeight="90vh" p="1.5rem 2.5rem">
       <Header title="CUSTOMERS" subtitle="List of Customers" />
       <Box
         mt="40px"
-        height="75vh"
+        height="72vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
