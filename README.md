@@ -15,6 +15,7 @@ This comprehensive dashboard project is built using the MERN (MongoDB, Express.j
 7. [Folder Structure](#folder-structure)
 8. [Running the Application](#running-the-application)
 9. [Author](#author)
+10. [Documentation](#documentation)
 
 ## Demo
 
@@ -99,11 +100,34 @@ This project aims to offer a comprehensive dashboard solution utilizing the MERN
 - **morgan**: HTTP request logger middleware for Node.js.
 - **nodemon**: Utility for automatically restarting the Node.js server upon file changes.
 
-## Installation
+### Installation
 
-### Environment Variables
+#### Environment Variables Setup
 
-The project uses environment variables stored in a `.env` file for configurations. Ensure to set up necessary variables like database connection strings, API keys, or any other sensitive information.
+The project relies on environment variables for configuration. Follow the instructions below to set up the necessary environment variables:
+
+#### Client-side Environment Variables
+
+Create a `.env` file in the `client` directory and add the following variable:
+
+```bash
+VITE_APP_BASE_URL="http://localhost:5001"
+```
+
+This variable defines the base URL for API requests in the client-side code.
+
+#### Server-side Environment Variables
+
+Create a `.env` file in the `server` directory and add the following variables:
+
+```bash
+MONGO_URL="YOUR_MONGODB_URL"
+PORT=5001
+```
+
+Ensure to replace `YOUR_MONGODB_URL` with your actual MongoDB URL. The `PORT` variable specifies the port number for the server.
+
+**Note**: Environment variables containing sensitive information like API keys, database credentials, or any other secrets should not be committed to version control. Ensure that the `.env` files are included in your project's `.gitignore` file to prevent accidental exposure of sensitive data.
 
 ### Getting started
 
@@ -182,4 +206,18 @@ This structure separates the client and server codebases for better organization
 
 - [@Shivam-Sharma-1](https://github.com/Shivam-Sharma-1)
 
+Certainly! Here's the documentation section with relevant links:
+
+## Documentation
+
+- **[React Documentation](https://reactjs.org/docs/getting-started.html)**: Explore React documentation for building user interfaces.
+- **[Nivo Documentation](https://nivo.rocks/docs/)**: Discover Nivo documentation for data visualization components in React.
+- **[Material-UI Documentation](https://mui.com/getting-started/usage/)**: Dive into Material-UI documentation for React UI components.
+- **[Express.js Documentation](https://expressjs.com/en/starter/installing.html)**: Learn more about Express.js for building web applications with Node.js.
+- **[MongoDB Documentation](https://docs.mongodb.com/)**: Explore MongoDB documentation for NoSQL database management.
+- **[Mongoose Documentation](https://mongoosejs.com/docs/)**: Refer to Mongoose documentation for MongoDB object modeling in Node.js.
+- **[React Router DOM Documentation](https://reactrouter.com/web/guides/quick-start)**: Learn how to use React Router DOM for client-side routing within the application.
+
 ---
+
+Feel free to adjust any sections or details according to your preferences!
